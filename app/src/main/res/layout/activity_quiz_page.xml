@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9FBCD6"
+    android:background="#FDFEFF"
     android:orientation="vertical"
     tools:context=".QuizPage">
 
@@ -151,8 +151,11 @@
         android:layout_width="243dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:background="@color/teal_700"
+        android:backgroundTint="#009688"
         android:text="Submit"
-        android:textColor="#81D4FA"
+        android:textColor="@color/white"
+        android:textColorLink="@color/white"
         tools:ignore="TextContrastCheck" />
 
 
