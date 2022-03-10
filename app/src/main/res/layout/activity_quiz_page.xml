@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9FBCD6"
+    android:orientation="vertical"
+    tools:context=".QuizPage">
+
+
+    <!--  Question 1  -->
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Q1: There are 52 states in the United States of America."
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/rgQuestion1"
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+
+        <RadioButton
+            android:id="@+id/rbtn1"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:text="True"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <RadioButton
+            android:id="@+id/rbtn2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="False"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </RadioGroup>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="24dp" />
+
+
+    <!--  Question 2  -->
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Q2: The brain is made up of 70% water."
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/rgQuestion2"
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+
+        <RadioButton
+            android:id="@+id/rbtn3"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="True"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <RadioButton
+            android:id="@+id/rbtn4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="False"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </RadioGroup>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="24dp" />
+
+
+    <!--  Question 3  -->
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Q3: We have 100 bones in our body."
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/rgQuestion3"
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+
+        <RadioButton
+            android:id="@+id/rbtn5"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:text="True"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <RadioButton
+            android:id="@+id/rbtn6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="False"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </RadioGroup>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="24dp" />
+
+    <!--  Question 4  -->
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Q4: Our arm is the strongets muscle in the human body."
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/rgQuestion4"
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+
+        <RadioButton
+            android:id="@+id/rbtn7"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="True"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <RadioButton
+            android:id="@+id/rbtn8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="False"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </RadioGroup>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="24dp" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="243dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Submit"
+        android:textColor="#81D4FA"
+        tools:ignore="TextContrastCheck" />
+
+
+</LinearLayout>
