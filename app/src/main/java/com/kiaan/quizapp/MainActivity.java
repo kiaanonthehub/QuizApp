@@ -1,20 +1,12 @@
 package com.kiaan.quizapp;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -40,23 +32,20 @@ public class MainActivity extends AppCompatActivity {
     // firebase - method to sign in
     private void signIn(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            // instantiate intent obj to open a new activity
-                            Intent in = new Intent(MainActivity.this,QuizPage.class);
-                            startActivity(in);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(MainActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            updateUI(null);
-                        }
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d(TAG, "signInWithEmail:success");
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        // instantiate intent obj to open a new activity
+                        Intent in = new Intent(MainActivity.this,QuizPage.class);
+                        startActivity(in);
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.w(TAG, "signInWithEmail:failure", task.getException());
+                        Toast.makeText(MainActivity.this, "Authentication failed.",
+                                Toast.LENGTH_SHORT).show();
+                        updateUI(null);
                     }
                 });
     }
@@ -64,23 +53,20 @@ public class MainActivity extends AppCompatActivity {
     // method to sign up
     private void createAccount(String email, String password) {
         mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "createUserWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            // instantiate intent obj to open a new activity
-                            Intent in = new Intent(MainActivity.this,QuizPage.class);
-                            startActivity(in);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(MainActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            updateUI(null);
-                        }
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d(TAG, "createUserWithEmail:success");
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        // instantiate intent obj to open a new activity
+                        Intent in = new Intent(MainActivity.this,QuizPage.class);
+                        startActivity(in);
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                        Toast.makeText(MainActivity.this, "Authentication failed.",
+                                Toast.LENGTH_SHORT).show();
+                        updateUI(null);
                     }
                 });
     }
@@ -102,22 +88,18 @@ public class MainActivity extends AppCompatActivity {
         EditText edtPass =  findViewById(R.id.txtPassword);
 
         // sign up
-        btnSignup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // declare and initialise variables
-                String username = edtUser.getText().toString(), password = edtPass.getText().toString();
-                createAccount(username,password);
-            }});
+        btnSignup.setOnClickListener(view -> {
+            // declare and initialise variables
+            String username = edtUser.getText().toString(), password = edtPass.getText().toString();
+            createAccount(username,password);
+        });
 
         // login
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // declare and initialise variables
-                String username = edtUser.getText().toString(), password = edtPass.getText().toString();
-                signIn(username,password);
-            }});
+        btnLogin.setOnClickListener(view -> {
+            // declare and initialise variables
+            String username = edtUser.getText().toString(), password = edtPass.getText().toString();
+            signIn(username,password);
+        });
 
 
 
