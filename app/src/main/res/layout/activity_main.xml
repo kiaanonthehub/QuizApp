@@ -50,9 +50,21 @@
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="198dp"
-        android:layout_height="wrap_content"
+        android:layout_width="152dp"
+        android:layout_height="37dp"
         android:layout_gravity="center_horizontal"
         android:background="#FF176C6B"
-        android:text="Login" />
+        android:text="Login"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="13dp" />
+
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="156dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Sign up" />
 </LinearLayout>
