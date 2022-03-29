@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                         Log.d(TAG, "createUserWithEmail:success");
                         FirebaseUser user = mAuth.getCurrentUser();
                         // instantiate intent obj to open a new activity
-                        Intent in = new Intent(MainActivity.this,QuizPage.class);
+                        Intent in = new Intent(MainActivity.this, Register.class);
                         startActivity(in);
                     } else {
                         // If sign in fails, display a message to the user.
